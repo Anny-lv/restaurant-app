@@ -28,8 +28,7 @@ const cacheFiles = [
   'img/10.jpg'
 ];
 
-/* Cache static assets on install */ 
-
+/* add cache files  */ 
   event.waitUntil(
   caches.open(staticCacheName).then( cache => {
       return cache.addAll(cacheFiles);
@@ -37,6 +36,7 @@ const cacheFiles = [
   );
 });
 
+/* // intercept requests for files from the network and respond with the files from the cache */ 
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then(response => {

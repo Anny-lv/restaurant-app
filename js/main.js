@@ -4,7 +4,6 @@ let restaurants,
 var newMap
 var markers = []
 
-
 /** 
  *Register Service Worker  
  */
