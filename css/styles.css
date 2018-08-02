@@ -163,8 +163,8 @@ nav h1 a {
   display: block;
   margin: 0;
   max-width: 100%;
-  min-height: 248px;
   min-width: 100%;
+  height:auto;
 }
 #restaurants-list li h1 {
   color: #E07000;
@@ -305,18 +305,27 @@ nav h1 a {
     order: 0;
     width: 100vw;
    }
+  #restaurant-img {
+  max-height: 230px;
+  }
   #restaurants-list {
-    padding: 20px 30px;
+    padding-right: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    overflow:hidden;
   }
   #restaurants-list li {
-    padding: 0 30px 10px 30px;
-    margin: 15px;
+    padding: 0 0 10px 0;
+    margin: 0px;
   }
-}
+   #restaurants-list a {
+    align-items: center;
+  }
+   footer {
+    overflow:hidden;
+  }
 
 /* Small and medium devices  */
 @media only screen and (max-width: 775px) {
