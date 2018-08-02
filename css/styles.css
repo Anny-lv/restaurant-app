@@ -67,6 +67,12 @@ nav h1 a {
   letter-spacing: 10px;
   text-transform: uppercase;
 }
+
+#main-title {
+  text-align: center;
+  padding-top: 20px;
+}
+
 #breadcrumb {
     padding: 10px 40px 16px;
     list-style: none;
@@ -111,6 +117,7 @@ nav h1 a {
   height: 50px;
   background-color: #3397DB;
   align-items: center;
+  display: flex;
 }
 .filter-options h2 {
   color: white;
@@ -152,6 +159,7 @@ nav h1 a {
   padding: 0 30px 25px;
   text-align: left;
   width: 270px;
+
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
@@ -249,7 +257,10 @@ nav h1 a {
   width: 50%;
 }
 #reviews-container {
-  padding: 30px 40px 80px;
+  /*padding: 30px 40px 80px;*/
+  display: flex;
+  flex-direction: column;
+
 }
 #reviews-container h2 {
   color: #f58500;
@@ -257,6 +268,7 @@ nav h1 a {
   font-weight: 300;
   letter-spacing: -1px;
   padding-bottom: 1pt;
+
 }
 #reviews-list {
   margin: 0;
@@ -264,7 +276,7 @@ nav h1 a {
 }
 #reviews-list li {
   background-color: #fff;
-    border: 2px solid #f3f3f3;
+  border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
   margin: 0 0 30px;
@@ -272,10 +284,157 @@ nav h1 a {
   padding: 0 20px 20px;
   position: relative;
   width: 85%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 #reviews-list li p {
   margin: 0 0 10px;
 }
 #restaurant-hours td {
   color: #666;
+}
+
+/* ====================== Media Queries ====================== */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .header {
+    display: flex;
+    display-direction:column;
+   }
+
+  .inside header {
+    order: 0;
+    width: 100vw;
+   }
+  #restaurants-list {
+    padding: 20px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  #restaurants-list li {
+    padding: 0 30px 10px 30px;
+    margin: 15px;
+  }
+}
+
+/* Small and medium devices  */
+@media only screen and (max-width: 775px) {
+
+body {
+  overflow-x: hidden;
+}
+ #maincontent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+  }
+  .inside #map-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    padding-top: 0;
+    margin-bottom: 0px;
+  }
+#restaurants-list  {
+  padding-left: 0px;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+}
+  .filter-options h2 {
+  margin-right: 1px;
+  margin-left: 5px;
+  }
+  .filter-options select {
+    width: 100%;
+  }
+  #reviews-container {
+    width: 100%;
+  }
+  #reviews-container li {
+    text-align: justify;
+  }
+  #reviews-container p {
+  padding-top: 10px;
+  }
+  #reviews-container li p{
+    padding-right: 10px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    text-align: justify;
+    word-wrap: normal;
+    }
+  .inside #breadcrumb {
+    width: 100%;
+  }
+  #restaurant-content, #reviews {
+    width: 100%;
+  }
+  .inside #footer {
+    width: 100%;
+  }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 1139px) {
+    nav h1 {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+#restaurants-list  {
+  padding-left: 10px;
+  width: 100vw;
+  }
+.inside #footer {
+   background-color: #444;
+  color: #aaa;
+  font-size: 8pt;
+  letter-spacing: 1px;
+  padding: 25px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  margin-top: 20px;
+  }
+#reviews-container {
+  margin-bottom: 0px;
+  padding-top: 0px;
+  }
+#reviews-container li {
+  margin-right: 30px;
+  }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1140px) {
+  nav h1 {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .inside #footer {
+   background-color: #444;
+  color: #aaa;
+  font-size: 8pt;
+  letter-spacing: 1px;
+  padding: 25px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  margin-top: 20px;
+  }
+  #reviews-container {
+  margin-bottom: 0px;
+  padding-top: 0px;
+  }
+
 }
