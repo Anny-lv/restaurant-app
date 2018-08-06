@@ -327,7 +327,10 @@ nav h1 a {
    #restaurants-list a {
     align-items: center;
   }
-   footer {
+  #restaurant-container, #reviews-container {
+    width: 100%; 
+  }
+  #footer {
     overflow-x:hidden;
   }
 
@@ -382,6 +385,17 @@ body {
     padding: 10px 0px 16px 0px;
   }
   #restaurant-content, #reviews {
+    width: 100%;
+  }
+  #restaurant-container, #reviews-container {
+  padding: 40px 40px 30px;
+  }
+  #restaurant-cuisine{
+    width: 50%;
+  }
+  #footer {
+    overflow-x:hidden;
+    padding:0px;
     width: 100%;
   }
 
