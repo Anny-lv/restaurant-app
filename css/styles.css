@@ -333,6 +333,7 @@ nav h1 a {
   #footer {
     overflow-x:hidden;
   }
+}
 
 /* Small and medium devices  */
 @media only screen and (max-width: 800px) {
@@ -398,6 +399,7 @@ body {
     padding:0px;
     width: 100%;
   }
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 1139px) {
