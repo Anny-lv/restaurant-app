@@ -254,7 +254,6 @@ nav h1 a {
   width: 50%;
 }
 #reviews-container {
-  /*padding: 30px 40px 80px;*/
   display: flex;
   flex-direction: column;
 
@@ -265,7 +264,6 @@ nav h1 a {
   font-weight: 300;
   letter-spacing: -1px;
   padding-bottom: 1pt;
-
 }
 #reviews-list {
   margin: 0;
@@ -300,16 +298,21 @@ nav h1 a {
     display: flex;
     display-direction:column;
    }
-
+  body {
+  overflow-x: hidden;
+  }
   .inside header {
     order: 0;
     width: 100vw;
    }
+   #reviews-container {
+  padding-right: 0px;
+  }
   #restaurant-img {
   max-height: 230px;
   }
   #restaurants-list {
-    padding-right: 0;
+    padding: 30px 0px 0px 60px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -317,8 +320,10 @@ nav h1 a {
     overflow:hidden;
   }
   #restaurants-list li {
-    padding: 0 0 10px 0;
+    padding: 5px 0 10px 0;
     margin: 0px;
+    text-align: center;
+    
   }
    #restaurants-list a {
     align-items: center;
@@ -328,7 +333,7 @@ nav h1 a {
   }
 
 /* Small and medium devices  */
-@media only screen and (max-width: 775px) {
+@media only screen and (max-width: 800px) {
 
 body {
   overflow-x: hidden;
@@ -349,7 +354,7 @@ body {
   }
 #restaurants-list  {
   padding-left: 0px;
-  width: 100vw;
+  width: 100%;
   align-items: center;
   justify-content: center;
 }
@@ -396,7 +401,6 @@ body {
     margin-bottom: 0px;
   }
 #restaurants-list  {
-  padding-left: 10px;
   width: 100vw;
   }
 .inside #footer {

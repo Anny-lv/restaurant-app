@@ -36,7 +36,7 @@ const cacheFiles = [
   );
 });
 
-/* // intercept requests for files from the network and respond with the files from the cache */ 
+ // intercept requests for files from the network and respond with the files from the cache 
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then(response => {
