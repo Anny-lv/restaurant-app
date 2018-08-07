@@ -247,7 +247,7 @@ nav h1 a {
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 140px 40px 30px;
+ /* padding: 140px 40px 30px; */
   width: 50%;
 }
 #reviews-container {
@@ -372,6 +372,7 @@ body {
   }
   #reviews-container p {
   padding-top: 10px;
+  padding-left: 10px;
   }
   #reviews-container li p{
     padding-right: 10px;
@@ -393,6 +394,7 @@ body {
   #restaurant-container, #reviews-container {
     margin-left: auto;
     margin-right: auto;
+    padding-top: 30px;
   }
   #restaurant-cuisine{
     width: 50%;
