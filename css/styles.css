@@ -87,7 +87,6 @@ nav h1 a {
     color: black;
     content: "/\00a0";
 }
-
 /* Add a color to all links inside the list */
 #breadcrumb li a {
     color: #252831;
@@ -156,7 +155,6 @@ nav h1 a {
   padding: 0px 30px 25px;
   text-align: left;
   width: 270px;
-
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
@@ -296,14 +294,14 @@ nav h1 a {
   .header {
     display: flex;
     display-direction:column;
-   }
+  }
   body {
   overflow-x: hidden;
   }
   .inside header {
     order: 0;
     width: 100vw;
-   }
+  }
    #reviews-container {
   padding-right: 0px;
   }
@@ -340,7 +338,7 @@ nav h1 a {
 
 body {
   overflow-x: hidden;
-}
+  }
  #maincontent {
     display: flex;
     flex-direction: column;
@@ -360,7 +358,7 @@ body {
   width: 100%;
   align-items: center;
   justify-content: center;
-}
+  }
   .filter-options h2 {
   margin-right: 1px;
   margin-left: 5px;
@@ -384,7 +382,6 @@ body {
   #reviews-list li {
     position: static;
   }
-
   .inside #breadcrumb {
     width: 100%;
     padding: 10px 0px 16px 0px;
@@ -440,7 +437,6 @@ nav h1 {
 #reviews-list li {
   position: static;
   }
-
 } 
 
 /* Extra large devices (large laptops and desktops) */

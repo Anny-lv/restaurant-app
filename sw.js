@@ -30,21 +30,22 @@ const cacheFiles = [
 self.addEventListener('install', event => {
 // add cache files  //
   event.waitUntil(
-  caches.open(staticCacheName).then( cache => {
-      return cache.addAll(cacheFiles);
-  }).catch( err => console.log('Unable to create cache', err))
-  );
+  	caches.open(staticCacheName).then( cache => {
+      	return cache.addAll(cacheFiles);
+  		}).catch( err => console.log('Unable to create cache', err))
+  	);
 });
 
 
-//Activte and delete previous cache //
+//Activte cache and delete previous cache //
 self.addEventListener('activate', event => {
 	event.waitUntil(
 		caches.keys().then( cacheNames => {
-			return Promise.all(
-				cacheNames.filter( cacheName => {
-					return cacheName.startsWith('rr-') &&
-					cacheName != staticCacheName;
+		return Promise.all(
+			cacheNames.filter( cacheName => {
+			//checks the cache name//
+			return cacheName.startsWith('rr-') &&
+				cacheName != staticCacheName;
 				}).map( cacheName => {
 					return caches.delete( cacheName );
 				})
@@ -57,10 +58,11 @@ self.addEventListener('activate', event => {
  // intercept requests for files from the network and respond with the files from the cache //
 self.addEventListener('fetch', event => {
 	event.respondWith(
+		//open new dynamic cache//
 		caches.open('rr-dynamic').then( cache => {
 			return caches.match(event.request).then( response => {
 				return response || fetch(event.request).then( response => {
-					cache.put(event.request, response.clone());
+				cache.put(event.request, response.clone());
 					return response;
 				});
 			});
