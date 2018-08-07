@@ -1,6 +1,19 @@
 let restaurant;
 var newMap;
 
+
+/** 
+ *Register Service Worker  
+ */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js', { scope: '/'})
+  .then((registr) => {
+    console.log('Service Worker registrateated', registr);
+    }).catch((error) => {
+      console.log('Unable to registrate Service Worker', error);
+    });
+  }
+
 /**
  * Initialize map as soon as the page is loaded.
  */
