@@ -56,9 +56,14 @@ self.addEventListener('activate', event => {
 
  // intercept requests for files from the network and respond with the files from the cache //
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request).then(response => {
-    	return response || fetch(event.request);
-    })
-  );
+	event.respondWith(
+		caches.open('rr-dynamic').then( cache => {
+			return caches.match(event.request).then( response => {
+				return response || fetch(event.request).then( response => {
+					cache.put(event.request, response.clone());
+					return response;
+				});
+			});
+		})
+	);
 });
