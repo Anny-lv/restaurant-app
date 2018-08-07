@@ -381,6 +381,10 @@ body {
     text-align: justify;
     word-wrap: normal;
     }
+  #reviews-list li {
+    position: static;
+  }
+
   .inside #breadcrumb {
     width: 100%;
     padding: 10px 0px 16px 0px;
@@ -399,9 +403,12 @@ body {
     padding:0px;
     width: 100%;
   }
+  #footer {
+    width: 100%;
+  }
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
+/* Large devices (laptops/desktopsp) */
 @media only screen and (max-width: 1139px) {
 nav h1 {
   padding-top: 20px;
@@ -420,7 +427,7 @@ nav h1 {
   padding: 0px;
   text-align: center;
   text-transform: uppercase;
-  /* width: 100%; */
+  width: 100%; 
   margin-top: 20px;
   }
 #reviews-container {
@@ -430,9 +437,13 @@ nav h1 {
 #reviews-container li {
   margin-right: 30px;
   }
+#reviews-list li {
+  position: static;
+  }
+
 } 
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* Extra large devices (large laptops and desktops) */
 @media only screen and (min-width: 1140px) {
   nav h1 {
     padding-top: 20px;
