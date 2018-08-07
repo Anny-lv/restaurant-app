@@ -5,7 +5,6 @@
 /*static cache name*/
 var staticCacheName = 'rr-static-v1';
 
-self.addEventListener('install', event => {
 /* Array with catche files*/
 const cacheFiles = [
   '/',
@@ -28,7 +27,8 @@ const cacheFiles = [
   'img/10.jpg'
 ];
 
-/* add cache files  */ 
+self.addEventListener('install', event => {
+// add cache files  //
   event.waitUntil(
   caches.open(staticCacheName).then( cache => {
       return cache.addAll(cacheFiles);
@@ -36,12 +36,29 @@ const cacheFiles = [
   );
 });
 
- // intercept requests for files from the network and respond with the files from the cache 
+
+//Activte and delete previous cache //
+self.addEventListener('activate', event => {
+	event.waitUntil(
+		caches.keys().then( cacheNames => {
+			return Promise.all(
+				cacheNames.filter( cacheName => {
+					return cacheName.startsWith('restaurant-') &&
+					cacheName != staticCacheName;
+				}).map( cacheName => {
+					return caches.delete( cacheName );
+				})
+			);
+		})
+	);
+});
+
+
+ // intercept requests for files from the network and respond with the files from the cache //
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then(response => {
-      if (response) {return response;}
-      {return fetch(event.request);}
+    	return response || fetch(event.request);
     })
   );
 });
