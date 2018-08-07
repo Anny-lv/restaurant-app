@@ -365,6 +365,7 @@ body {
   }
   .filter-options select {
     width: 100%;
+    font-size: 11px;
   }
   #reviews-container li {
     text-align: justify;
